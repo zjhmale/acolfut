@@ -363,30 +363,30 @@
 (defmethod report :fail [m]
   (with-test-out
     (inc-report-counter :fail)
-    (println "\nFAIL in" (testing-vars-str m))
+    (println (red "\nFAIL in " (testing-vars-str m)))
     (when (seq *testing-contexts*) (println (testing-contexts-str)))
     (when-let [message (:message m)] (println message))
-    (println "expected:" (pr-str (:expected m)))
-    (println "  actual:" (pr-str (:actual m)))))
+    (println (yellow "expected: " (pr-str (:expected m))))
+    (println (cyan "  actual: " (pr-str (:actual m))))))
 
 (defmethod report :error [m]
   (with-test-out
     (inc-report-counter :error)
-    (println "\nERROR in" (testing-vars-str m))
+    (println (magenta "\nERROR in " (testing-vars-str m)))
     (when (seq *testing-contexts*) (println (testing-contexts-str)))
     (when-let [message (:message m)] (println message))
-    (println "expected:" (pr-str (:expected m)))
-    (print "  actual: ")
-    (let [actual (:actual m)]
-      (if (instance? Throwable actual)
-        (stack/print-cause-trace actual *stack-trace-depth*)
-        (prn actual)))))
+    (println (yellow "expected: " (pr-str (:expected m))))
+    (print (cyan "  actual: ")
+           (let [actual (:actual m)]
+             (if (instance? Throwable actual)
+               (stack/print-cause-trace actual *stack-trace-depth*)
+               (prn actual))))))
 
 (defmethod report :summary [m]
   (with-test-out
-    (println "\nRan" (:test m) "tests containing"
-             (+ (:pass m) (:fail m) (:error m)) "assertions.")
-    (println (:fail m) "failures," (:error m) "errors.")))
+    (println (green "\nRan " (:test m) " tests containing "
+                    (+ (:pass m) (:fail m) (:error m)) " assertions."))
+    (println (red (:fail m) " failures,") (magenta (:error m) " errors."))))
 
 (defmethod report :begin-test-ns [m]
   (with-test-out
