@@ -172,7 +172,8 @@
 "}
   acolfut.sweet
   (:require [clojure.template :as temp]
-            [clojure.stacktrace :as stack]))
+            [clojure.stacktrace :as stack]
+            [jansi-clj.core :refer :all]))
 
 ;; Nothing is marked "private" here, so you can rebind things to plug
 ;; in your own testing or reporting frameworks.
