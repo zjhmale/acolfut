@@ -6,6 +6,15 @@ a coloful test framework for clojure inspired by clojure.test
 
 ## usage
 
+* project.clj
+
+```clojure
+:dependencies [[acolfut "0.1.0"]]
+:plugins [[colortest "0.1.0"]]
+```
+
+* testfile.clj
+
 ```clojure
 (ns acolfut.sweet-test
   (:require [acolfut.sweet :refer :all]))
@@ -20,7 +29,7 @@ a coloful test framework for clojure inspired by clojure.test
 
 (deftest success-test
   (testing "this is a success test"
-    (is (= 0 3))))
+    (is (= 0 0))))
 ```
 
 ## License

@@ -11,4 +11,4 @@
 
 (deftest success-test
   (testing "this is a success test"
-    (is (= 0 3))))
+    (is (= 0 0))))
