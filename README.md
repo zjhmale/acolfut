@@ -1,10 +1,10 @@
-## acolfut
+## Acolfut
 
 a coloful test framework for clojure inspired by clojure.test
 
 [![Clojars Project](http://clojars.org/acolfut/latest-version.svg)](http://clojars.org/acolfut)
 
-## usage
+## Usage
 
 * project.clj
 
