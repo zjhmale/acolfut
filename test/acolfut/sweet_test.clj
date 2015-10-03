@@ -1,8 +1,6 @@
 (ns acolfut.sweet-test
   (:require [acolfut.sweet :refer :all]))
 
-;;[acolfut.sweet :refer :all]
-
 (deftest failure-test
   (testing "this is a failure test"
     (is (= 0 1))))
