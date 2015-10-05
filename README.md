@@ -10,7 +10,7 @@ a coloful test framework for clojure inspired by clojure.test
 
 ```clojure
 :dependencies [[acolfut "0.3.0"]]
-:plugins [[lein-colortest "0.1.0"]]
+:plugins [[lein-colortest "0.3.0"]]
 ```
 
 * testfile.clj
