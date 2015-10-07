@@ -1,4 +1,4 @@
-(defproject acolfut "0.3.0"
+(defproject acolfut "0.3.3"
   :description "a coloful test framework for clojure inspired by clojure.test"
   :url "https://github.com/zjhmale/acolfut"
   :license {:name "Eclipse Public License"

@@ -557,6 +557,15 @@
   ([form] `(is ~form nil))
   ([form msg] `(try-expr ~msg ~form)))
 
+(defmacro isnot [& body]
+  `(is (not ~@body)))
+
+(defmacro is= [& body]
+  `(is (= ~@body)))
+
+(defmacro isnot= [& body]
+  `(is (not (= ~@body))))
+
 (defmacro are
   "Checks multiple assertions with a template expression.
   See clojure.template/do-template for an explanation of

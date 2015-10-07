@@ -9,7 +9,7 @@ a coloful test framework for clojure inspired by clojure.test
 * project.clj
 
 ```clojure
-:dependencies [[acolfut "0.3.0"]]
+:dependencies [[acolfut "0.3.3"]]
 :plugins [[lein-colortest "0.3.0"]]
 ```
 
@@ -21,15 +21,17 @@ a coloful test framework for clojure inspired by clojure.test
 
 (deftest failure-test
   (testing "this is a failure test"
-    (is (= 0 1))))
+    (is= 0 1)))
 
 (deftest error-test
   (testing "this is a error test"
-    (is (= 0 (* 1 (:k {}))))))
+    (is= 0 (* 1 (:k {})))))
 
 (deftest success-test
   (testing "this is a success test"
-    (is (= 0 0))))
+    (is= 0 0)
+    (isnot false)
+    (isnot= 0 1)))
 ```
 
 ## License

@@ -3,12 +3,14 @@
 
 (deftest failure-test
   (testing "this is a failure test"
-    (is (= 0 1))))
+    (is= 0 1)))
 
 (deftest error-test
   (testing "this is a error test"
-    (is (= 0 (* 1 (:k {}))))))
+    (is= 0 (* 1 (:k {})))))
 
 (deftest success-test
   (testing "this is a success test"
-    (is (= 0 0))))
+    (is= 0 0)
+    (isnot false)
+    (isnot= 0 1)))
